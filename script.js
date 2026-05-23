@@ -1,4 +1,5 @@
 const form = document.getElementById("leadForm");
+const zapierKey = process.env.Zapier_key;
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -11,7 +12,7 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    const response = await fetch("YOUR_ZAPIER_WEBHOOK_URL", {
+    const response = await fetch(zapierKey, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
