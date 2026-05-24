@@ -1,5 +1,5 @@
 const form = document.getElementById("leadForm");
-const zapierKey = process.env.Zapier_key;
+const webhookURL = "https://hook.us2.make.com/o88t82mkc21k1ypnb5wg9cj56aq1dj8e";
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -12,7 +12,7 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    const response = await fetch(zapierKey, {
+    const response = await fetch(webhookURL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
